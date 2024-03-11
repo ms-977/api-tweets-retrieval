@@ -2,63 +2,42 @@
 
 This Flask application provides a set of RESTful APIs to interact with Twitter Favorites data. The application fetches data from a JSON file hosted on GitHub, allowing users to retrieve information about tweets, links in tweets, tweet details, and user profiles.
 
-Prerequisites
-Python 3.x
-Flask
-Requests
-Installation
-Clone the repository:
+1. Install Flask and Requests:
 
-bash
-Copy code
-git clone [repository_url]
-Install dependencies:
+    ```bash
+    pip install Flask requests
+    ```
 
-bash
-Copy code
-pip install -r requirements.txt
-Usage
-Run the Flask application:
+2. Run the Flask application:
 
-bash
-Copy code
-python app.py
-Access the APIs using the following routes:
+    ```bash
+    python your_app_name.py
+    ```
 
-Get all tweets:
+Replace `your_app_name.py` with the name of your Python file containing the Flask application.
 
-Endpoint: /tweets
-Method: GET
-Get all links in tweets:
+## Endpoints
 
-Endpoint: /tweets/links
-Method: GET
-Get tweet details by ID:
+### Get All Tweets
 
-Endpoint: /tweet/<tweet_id>
-Method: GET
-Get user profile by screen name:
+- **Endpoint:** `/tweets`
+- **Method:** `GET`
+- **Description:** Retrieve all tweets with their creation time, ID, and text.
 
-Endpoint: /user/<screen_name>
-Method: GET
-Sample Requests
-Get all tweets:
+### Get All Links from Tweets
 
-bash
-Copy code
-curl http://localhost:5000/tweets
-Get all links in tweets:
+- **Endpoint:** `/tweets/links`
+- **Method:** `GET`
+- **Description:** Extract all external links found in the tweet texts, grouped by tweet IDs.
 
-bash
-Copy code
-curl http://localhost:5000/tweets/links
-Get tweet details by ID:
+### Get Tweet Details by ID
 
-bash
-Copy code
-curl http://localhost:5000/tweet/123456
-Get user profile by screen name:
+- **Endpoint:** `/tweet/<tweet_id>` "incude acutal tweet id within <here>
+- **Method:** `GET`
+- **Description:** Retrieve details of a specific tweet by its ID, including creation time, text, and user screen name.
 
-bash
-Copy code
-curl http://localhost:5000/user/username
+### Get User Profile by Screen Name
+
+- **Endpoint:** `/user/<screen_name>` "incude acutal screen name within <here>
+- **Method:** `GET`
+- **Description:** Retrieve detailed profile information of a specific Twitter user by screen name.
